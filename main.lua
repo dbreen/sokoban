@@ -15,6 +15,7 @@ function love.load()
 
     Media:load()
     Levels:load()
+    Stars.create(50)
 
     Gamestate.registerEvents()
     Gamestate.switch(menu)

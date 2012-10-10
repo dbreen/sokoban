@@ -14,6 +14,7 @@ function menu:enter(previous)
     self.switching = false
     self.selection = 2
     self.font_zoom = 1
+    self.hue = 0
     self.player = {x = 6, y = 3}
     self.blocks = {
         {x=4, y=4},
@@ -27,7 +28,8 @@ end
 
 function menu:update(dt)
     Timer.update(dt)
---    love.graphics.setBackgroundColor(math.sin(dt) * 255 % 255, math.cos(dt) * 255 % 255, math.sin(dt) * math.cos(dt) * 255 % 255)
+    Stars.update(dt)
+    self.hue = self.hue + dt * 50
     
     if self.switching then return end
 
@@ -52,8 +54,12 @@ end
 function menu:draw()
     love.graphics.push()
 
+    love.graphics.setBackgroundColor(HSL(self.hue % 255, 200, 200))
     love.graphics.setColorMode('replace')
+    Stars.draw()
+
     love.graphics.translate(50, 140)
+
     for y = 1, self.menu_level.tiles_y do
         for x = 1, self.menu_level.tiles_x do
             t = self.menu_level.map[y][x]
@@ -96,7 +102,7 @@ function menu:keypressed(key)
         local dir = key == 'left' and -1 or 1
         new_selection = self.selection + dir
         if new_selection >= 1 and new_selection <= 3 then
-            Media:play_sound('menu', true)
+            Media:play_sound('menu')
             self.selection = new_selection
             self.player.x = self.player.x + dir * 2
         end
@@ -106,13 +112,14 @@ function menu:keypressed(key)
         self.blocks[self.selection].y = self.blocks[self.selection].y + 1
         local selection = self.selection
         self.switching = true
-        love.audio.stop()
         if selection == 1 then
             --
         elseif selection == 2 then
+            love.audio.stop()
             Media:play_sound('play')
             Media:next_song()
         elseif selection == 3 then
+            love.audio.stop()
             Media:play_sound('quit')
         end
 

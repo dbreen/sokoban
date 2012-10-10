@@ -25,6 +25,7 @@ function Media:load()
     self.block = self:create_tile(2, 7, self.tilex, self.tiley)
     self.block_goal = self:create_tile(4, 0, self.tilex, self.tiley)
     self.goal = self:create_tile(4, 0, self.tilex, self.tiley)
+    self.star = love.graphics.newImage('media/images/star.png')
 
     self.music = {
         love.audio.newSource('media/music/pinball-spring.mp3'),
@@ -68,11 +69,6 @@ function Media:next_song()
     end)
 end
 
-function Media:play_sound(sound, stop)
-    if stop then
-        for _, sound in ipairs(self.sounds) do
-            sound:stop()
-        end
-    end
+function Media:play_sound(sound)
     love.audio.play(self.sounds[sound])
 end

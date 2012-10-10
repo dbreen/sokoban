@@ -1,20 +1,19 @@
 
 main = Gamestate.new()
-rot = 0
 
 function main:init()
     camera = Camera()
-    -- camera:lookAt(love.graphics.getWidth() / 2, love.graphics.getHeight() / 2)
 end
 
 function main:enter(previous)
     rescale()
-    love.graphics.setBackgroundColor(200, 215, 225)
---    Media:next_song()
+    self.hue = 0
 end
 
 function main:update(dt)
     Timer.update(dt)
+    Stars.update(dt)
+    self.hue = self.hue + dt * 50
 end
 
 function draw_quad(t, pos, ...)
@@ -32,6 +31,9 @@ function draw_quad(t, pos, ...)
 end
 
 function main:draw()
+    love.graphics.setBackgroundColor(HSL(main.hue % 255, 200, 200))
+    Stars.draw()
+
     love.graphics.push()
     love.graphics.scale(camera.zoom)
     love.graphics.translate(offsetx, offsety)
@@ -43,6 +45,7 @@ function render()
     local level = Levels.level
     local player = level.player
     love.graphics.setColorMode('replace')
+
     for y = 1, level.tiles_y do
         for x = 1, level.tiles_x do
             t = level.map[y][x]
@@ -78,6 +81,7 @@ end
 local function next_level()
     Levels:next_level()
     rescale()
+    Media:play_sound('goal')
     Media:next_song()
 end
 
