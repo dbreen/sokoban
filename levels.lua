@@ -1,5 +1,4 @@
-Levels = {num_levels = 3}
---Levels.__index = Levels
+Levels = {num_levels = 4}
 
 function Levels:load()
     self.levels = {}
@@ -43,12 +42,18 @@ function Levels:load_level(file)
                 tile = 'wall'
             elseif char == ' ' then
                 tile = 'grass'
+            elseif char == 'D' then
+                tile = 'dirt'
+            elseif char == 'S' then
+                tile = 'stone'
             elseif char == '@' then
                 tile = 'gwall'
             elseif char == '^' then
                 tile = 'tree'
             elseif char == '*' then
                 tile = 'bush'
+            elseif char == 'B' then
+                tile = 'bug'
             elseif char == '~' then
                 tile = 'water'
             elseif char == 'P' then

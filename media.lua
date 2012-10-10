@@ -1,5 +1,4 @@
 Media = {}
---Media.__index = Media
 
 function Media:create_tile(x, y, size_x, size_y)
     return love.graphics.newQuad(x * size_x, y * size_y + 1, size_x, size_y, self.tiles:getWidth(), self.tiles:getHeight())
@@ -14,7 +13,10 @@ function Media:load()
 
     self.tiles = love.graphics.newImage('media/images/tiles.png')
     self.grass = self:create_tile(1, 7, self.tilex, self.tiley)
+    self.dirt = self:create_tile(1, 0, self.tilex, self.tiley)
+    self.stone = self:create_tile(2, 5, self.tilex, self.tiley)
     self.tree = self:create_tile(5, 7, self.tilex, self.tiley)
+    self.bug = self:create_tile(1, 3, self.tilex, self.tiley)
     self.bush = self:create_tile(5, 6, self.tilex, self.tiley)
     self.wall = self:create_tile(6, 5, self.tilex, self.tiley)
     self.gwall = self:create_tile(5, 5, self.tilex, self.tiley)
@@ -29,4 +31,25 @@ function Media:load()
         love.audio.newSource('media/music/presenterator.mp3'),
         love.audio.newSource('media/music/silly-fun.mp3')
     }
+    self.current_song = 1
+end
+
+function Media:start_music()
+    if enable_music then
+        love.audio.play(self.music[self.current_song])
+    end
+end
+
+function Media:next_song()
+    local volume = 1
+    Timer.do_for(2, function(dt)
+        volume = volume - .01
+        love.audio.setVolume(volume)
+    end, function()
+        love.audio.stop()
+        love.audio.setVolume(1)
+        self.current_song = self.current_song + 1
+        if self.current_song > #self.music then self.current_song = 1 end
+        self:start_music()
+    end)
 end

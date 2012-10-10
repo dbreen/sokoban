@@ -10,14 +10,16 @@ end
 function main:enter(previous)
     rescale()
     love.graphics.setBackgroundColor(200, 215, 225)
+    Media:start_music()
 end
 
 function main:update(dt)
+    Timer.update(dt)
 end
 
-local blocks = {"water", "grass", "wall", "gwall"}
+local blocks = {"water", "grass", "wall", "gwall", "dirt", "stone"}
 local raised = {"wall", "gwall"}
-local extras = {"tree", "bush"}
+local extras = {"tree", "bush", "bug"}
 
 function draw_quad(t, pos, ...)
     quad = Media[t]
@@ -62,7 +64,6 @@ function render()
                 end
             end
             if x == level.tiles_x and player.y == y then
-                print("x "..x.." y "..y.." draw playrer"..player.y)
                 draw_quad('player', player)
             end
         end
@@ -72,17 +73,15 @@ end
 function rescale()
     local ratiox = Media.screenx / (Levels.level.tiles_x * Media.tilex)
     local ratioy = Media.screeny / (Levels.level.tiles_y * Media.tiley_a)
-    print('ratiox '..ratiox..' tilesx '..Levels.level.tiles_x..' tilex '..Media.tilex)
-    print('ratioy '..ratioy..' tilesy '..Levels.level.tiles_y..' tiley '..Media.tiley_a)
     camera.zoom = math.min(ratiox, ratioy)
     offsetx = (Media.screenx - (Levels.level.tiles_x * Media.tilex) * camera.zoom) / 2
     offsety = (Media.screeny - (Levels.level.tiles_y * Media.tiley_a) * camera.zoom) / 2 + Media.height_offset
-    print('x '..offsetx..' y '..offsety..' zoom '..camera.zoom)
 end
 
 local function next_level()
     Levels:next_level()
     rescale()
+    Media:next_song()
 end
 
 function main:keypressed(key)
