@@ -1,13 +1,14 @@
 Gamestate = require 'hump.gamestate'
 Camera = require 'hump.camera'
 Timer = require 'hump.timer'
+require 'utils'
+require 'media'
+require 'levels'
 require 'scene_main'
 require 'scene_menu'
 require 'scene_win'
-require 'levels'
-require 'media'
 
-enable_music = false
+enable_music = true
 
 function love.load()
     love.graphics.setCaption('Sokodan')

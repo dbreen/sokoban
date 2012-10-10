@@ -31,7 +31,21 @@ function Media:load()
         love.audio.newSource('media/music/presenterator.mp3'),
         love.audio.newSource('media/music/silly-fun.mp3')
     }
+    for _, song in ipairs(self.music) do
+        song:setVolume(.5)
+    end
+    self.sounds = {
+        chimes = love.audio.newSource('media/sounds/chimes.mp3', 'static'),
+        goal = love.audio.newSource('media/sounds/goal.mp3', 'static'),
+        menu = love.audio.newSource('media/sounds/menu.mp3', 'static'),
+        play = love.audio.newSource('media/sounds/play.wav', 'static'),
+        quit = love.audio.newSource('media/sounds/quit.wav', 'static')
+    }
     self.current_song = 1
+
+    self.fonts = {
+        menu = love.graphics.newFont('media/fonts/floralies.ttf', 48)
+    }
 end
 
 function Media:start_music()
@@ -52,4 +66,13 @@ function Media:next_song()
         if self.current_song > #self.music then self.current_song = 1 end
         self:start_music()
     end)
+end
+
+function Media:play_sound(sound, stop)
+    if stop then
+        for _, sound in ipairs(self.sounds) do
+            sound:stop()
+        end
+    end
+    love.audio.play(self.sounds[sound])
 end

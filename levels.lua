@@ -22,6 +22,10 @@ function Levels:reset()
     self.level = self.levels[1]
 end
 
+blocks = {"water", "grass", "wall", "gwall", "dirt", "stone"}
+raised = {"wall", "gwall"}
+extras = {"tree", "bush", "bug"}
+
 function Levels:load_level(file)
     local f = io.open(file)
     assert(f, "Could not find map: "..file)

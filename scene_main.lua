@@ -10,16 +10,12 @@ end
 function main:enter(previous)
     rescale()
     love.graphics.setBackgroundColor(200, 215, 225)
-    Media:start_music()
+--    Media:next_song()
 end
 
 function main:update(dt)
     Timer.update(dt)
 end
-
-local blocks = {"water", "grass", "wall", "gwall", "dirt", "stone"}
-local raised = {"wall", "gwall"}
-local extras = {"tree", "bush", "bug"}
 
 function draw_quad(t, pos, ...)
     quad = Media[t]
@@ -45,7 +41,8 @@ end
 
 function render()
     local level = Levels.level
-    player = level.player
+    local player = level.player
+    love.graphics.setColorMode('replace')
     for y = 1, level.tiles_y do
         for x = 1, level.tiles_x do
             t = level.map[y][x]
