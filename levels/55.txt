@@ -1,0 +1,9 @@
+#########
+#O  P  O#
+#OXXXXXO#
+#O     O#
+#OXX*XXO#
+#O     O#
+#OXXXXXO#
+#O     O#
+#########

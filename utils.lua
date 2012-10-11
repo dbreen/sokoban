@@ -21,7 +21,7 @@ Stars = {
             Stars.stars[i] = {x = math.random(1, Media.screenx),
                         y = math.random(1, Media.screeny),
                         vx = math.random(50, 200), vy = math.random(5, 200),
-                        rot = 0, rvel = math.random() * 3}
+                        rot = 0, rvel = math.random() * 3, zoom = .5 + math.random(0, 3) / 2}
         end
     end,
     update = function(dt)
@@ -35,7 +35,7 @@ Stars = {
     end,
     draw = function()
         for _, star in ipairs(Stars.stars) do
-            love.graphics.draw(Media.star, star.x, star.y, star.rot, 1, 1, 50, 50)
+            love.graphics.draw(Media.star, star.x, star.y, star.rot, star.zoom, star.zoom, 50, 50)
         end
     end
 }

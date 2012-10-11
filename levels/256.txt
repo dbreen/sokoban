@@ -1,0 +1,23 @@
+             #         
+            #P#        
+           #   #       
+          #  X  #      
+         ## X X ##     
+        ## X  #X ##    
+       ## X  #  X ##   
+      ## X  #OO  X  #  
+     ## X  #OOOO #X  # 
+    ## X  #OO OO#  X  #
+   ## X  # OOOO#  X  # 
+  #  X  #OO OO#  X  #  
+ #  X  #OOOO #  X ##   
+#  X  #OO OO#  X ##    
+ #  X# OOOO#  X ##     
+  #  X  OO#  X ##      
+   ## X  #  X ##       
+    ## X   X ##        
+     ## X X ##         
+      #  X  #          
+       #   #           
+        # #            
+         #             

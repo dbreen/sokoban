@@ -1,0 +1,16 @@
+#################
+#P  XO  XO  XO  #
+# XO  XO  XO  X #
+##############O #
+#OX  OX  OX  OX #
+#  OX  OX  OX   #
+#XX##############
+# OXO  XO  XO   #
+#O   XO  XO  XO #
+############## X#
+# OOX  OX  OX  O#
+#OX  OX  OX  OX #
+#  ##############
+# XO  XO  XO  X #
+#   XO  XO  XO  #
+#################

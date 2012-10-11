@@ -1,0 +1,9 @@
+#########
+#OO X OO#
+#O PX  O#
+#OX X XO#
+#XXX*XXX#
+#OX X XO#
+#O  X  O#
+#OO X OO#
+#########

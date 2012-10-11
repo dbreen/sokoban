@@ -1,0 +1,12 @@
+   #                 #   
+  #O#       #       #O#  
+ #*XO#     #O#     #OX*# 
+#OX XO#   #OXO#   #OX XO#
+ #OX XO# #OXPXO# #OX XO# 
+  #OX XO#OX X XO#OX XO#  
+   #OX X*X XOX X*X XO#   
+    #OX X XO#OX X XO#    
+     #OX XO# #OX XO#     
+      #OXO#   #OXO#      
+       #O#     #O#       
+        #       #        

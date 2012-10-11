@@ -1,0 +1,21 @@
+          #          
+         ###         
+        ##O##        
+       ##OXO##       
+      ##OXOXO##      
+     ##OXOXOXO##     
+    ##OXOXOXOXO##    
+   ##OXOX X XOXO##   
+  ##OXOXOX XOXOXO##  
+ ##OXOX X X X XOXO## 
+##OXOXOX XPX XOXOXO##
+ ##OXOX X X X XOXO## 
+  ##OXOXOX XOXOXO##  
+   ##OXOX X XOXO##   
+    ##OXOXOXOXO##    
+     ##OXOXOXO##     
+      ##OXOXO##      
+       ##OXO##       
+        ##O##        
+         ###         
+          #          

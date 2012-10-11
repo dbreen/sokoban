@@ -21,6 +21,12 @@ function menu:enter(previous)
         {x=6, y=4},
         {x=8, y=4}
     }
+    self.hearts = {
+        {x=100, y=80},
+        {x=100, y=680},
+        {x=1100, y=80},
+        {x=1100, y=680}
+    }
 end
 
 function menu:leave(previous)
@@ -84,6 +90,10 @@ function menu:draw()
     self:print('Quit', 750, 375, 3)
 
     love.graphics.pop()
+
+    for _, heart in ipairs(self.hearts) do
+        love.graphics.draw(Media.heart, heart.x, heart.y, self.menu_rot, 1, 1, 50, 50)
+    end
 end
 
 function menu:levels()

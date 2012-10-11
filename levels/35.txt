@@ -1,0 +1,10 @@
+##########
+#P       #
+# XXXXXX##
+# X      #
+# X XX# O#
+# X X  OO#
+# X #  OO#
+# X  OOOO#
+# # OOOOO#
+##########

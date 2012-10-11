@@ -39,6 +39,12 @@ function main:draw()
     love.graphics.translate(offsetx, offsety)
     render()
     love.graphics.pop()
+
+    love.graphics.setColorMode('modulate')
+    love.graphics.setColor(60, 60, 60)
+    love.graphics.print(Levels.levelno, 15, 15)
+    love.graphics.setColor(255, 150, 150)
+    love.graphics.print(Levels.levelno, 10, 10)
 end
 
 function render()
@@ -73,7 +79,7 @@ end
 function rescale()
     local ratiox = Media.screenx / (Levels.level.tiles_x * Media.tilex)
     local ratioy = Media.screeny / (Levels.level.tiles_y * Media.tiley_a)
-    camera.zoom = math.min(ratiox, ratioy)
+    camera.zoom = math.min(ratiox, ratioy) * .9
     offsetx = (Media.screenx - (Levels.level.tiles_x * Media.tilex) * camera.zoom) / 2
     offsety = (Media.screeny - (Levels.level.tiles_y * Media.tiley_a) * camera.zoom) / 2 + Media.height_offset
 end

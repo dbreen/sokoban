@@ -1,11 +1,18 @@
-Levels = {num_levels = 4}
+Levels = {}
 
 function Levels:load()
     self.levels = {}
     self.levelno = 1
-    for i = 1, Levels.num_levels do
-        self.levels[i] = self:load_level(string.format("levels/%d.txt", i))
+    self.num_levels = 1
+    for _, file in ipairs(love.filesystem.enumerate("levels")) do
+        if string.match(file, "%d.txt") then
+            self.levels[self.num_levels] = self:load_level("levels/"..self.num_levels..".txt")
+            self.num_levels = self.num_levels + 1
+        end
     end
+--    for i = 1, Levels.num_levels do
+--        self.levels[i] = self:load_level(string.format("levels/%d.txt", i))
+--    end
     self.level = self.levels[1]
 end
 
@@ -27,15 +34,10 @@ raised = {"wall", "gwall"}
 extras = {"tree", "bush", "bug"}
 
 function Levels:load_level(file)
-    local f = io.open(file)
-    assert(f, "Could not find map: "..file)
     local lines = {}
-    while true do
-        local line = f:read()
-        if line == nil then break end
-        table.insert(lines, line)
+    for line in love.filesystem.lines(file) do
+      table.insert(lines, line)
     end
-    f:close()
     local map, blocks, goals = {}, {}, {}
     for y, line in ipairs(lines) do
         map[y] = {}

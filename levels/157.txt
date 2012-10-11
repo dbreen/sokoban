@@ -1,0 +1,16 @@
+   #          #   
+  # #        # #  
+ # XO#      #OX # 
+# OXXO#    #OXXO #
+ # OXXO#  #OXXO # 
+  # OXXO##OXXO #  
+   # OXX  XXO #   
+    # OX  XO #    
+     #  P   #     
+     #      #     
+     ##XXXX##     
+      #    #      
+      # XX #      
+      #OOOO#      
+      #OOOO#      
+      ######      

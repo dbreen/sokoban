@@ -1,0 +1,25 @@
+#############
+#           #
+# XXXXXXXXX #
+# XOOOOOOOX #
+# XOXXXXXOX #
+# XOXOOOXOX #
+# XOXO OXOX #
+# XOXOOOXOX #
+# XOXXXXXOX #
+# XOOOOOOOX #
+# XXXXXXXXX #
+#           #
+###### ######
+#           #
+# OOOOOOOOO #
+# OXXXXXXXO #
+# OXOOOOOXO #
+# OXOXXXOXO #
+# OXOXPXOXO #
+# OXOXXXOXO #
+# OXOOOOOXO #
+# OXXXXXXXO #
+# OOOOOOOOO #
+#           #
+#############

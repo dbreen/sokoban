@@ -1,0 +1,12 @@
+############
+#P         #
+# XXXXOOOO #
+# XOOOXXXO #
+# XOXXOOXO #
+# XOX  OXO #
+# OXO  XOX #
+# OXOOXXOX #
+# OXXXOOOX #
+# OOOOXXXX #
+#          #
+############

@@ -1,0 +1,9 @@
+#########
+#    OX #
+#XXXXOX #
+#OOOOOX #
+# XOPOX #
+# XOOOOO#
+# XOXXXX#
+# XO    #
+#########

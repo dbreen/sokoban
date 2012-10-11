@@ -1,0 +1,15 @@
+     #####     
+    ##O####    
+  ###OXPXO###  
+  ##OXXOXXO##  
+ ##OXXO#OXXO## 
+##OXXO###OXXO##
+## XO## ##OXXO#
+##XO##   ##OX##
+#OXXO## ##OX ##
+##OXXO###OXXO##
+ ##OXXO#OXXO## 
+  ##OXXOXXO##  
+  ###O XXO###  
+    ####O##    
+     #####     

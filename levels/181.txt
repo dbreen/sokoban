@@ -1,0 +1,12 @@
+    ##########
+  ###OOX X   #
+###OOOOOX X  #
+#OOOOOO# X X #
+#OOOOOO#X X  #
+#OOOO### X X##
+#OO###  X X # 
+#### X X X X# 
+# X X X X X # 
+#  X X X X  # 
+#           # 
+############# 

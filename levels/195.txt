@@ -1,0 +1,19 @@
+############
+#  OX OX   #
+# *OX OX *P#
+#  OX OX   #
+#XXX########
+#OOO#       
+#   #       
+#XXX########
+#OOOXO XO  #
+# * XO XO* #
+#   XO XO  #
+########XXX#
+       #OOO#
+       #   #
+########XXX#
+#  OX OXOOO#
+# *OX OX * #
+#  OX OX   #
+############

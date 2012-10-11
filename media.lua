@@ -26,6 +26,7 @@ function Media:load()
     self.block_goal = self:create_tile(4, 0, self.tilex, self.tiley)
     self.goal = self:create_tile(4, 0, self.tilex, self.tiley)
     self.star = love.graphics.newImage('media/images/star.png')
+    self.heart = love.graphics.newImage('media/images/heart.png')
 
     self.music = {
         love.audio.newSource('media/music/pinball-spring.mp3'),

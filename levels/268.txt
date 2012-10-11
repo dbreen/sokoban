@@ -1,0 +1,26 @@
+##########
+# P      #
+#X X  X X#
+# X XX X #
+#  X  X  #
+#   XX   #
+#  X  X  #
+# X XX X #
+#X X  X X#
+#OOOOOOOO#
+#O  OO  O#
+#O  OO  O#
+#OOOOOOOO#
+#OOOOOOOO#
+#O      O#
+#O      O#
+#OOOOOOOO#
+#X X  X X#
+# X XX X #
+#  X  X  #
+#   XX   #
+#  X  X  #
+# X XX X #
+#X X  X X#
+#        #
+##########
