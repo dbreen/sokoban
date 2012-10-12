@@ -4,11 +4,12 @@ Timer = require 'hump.timer'
 require 'utils'
 require 'media'
 require 'levels'
+require 'scene_level'
 require 'scene_main'
 require 'scene_menu'
 require 'scene_win'
 
-enable_music = false
+enable_music = true
 
 function love.load()
     love.graphics.setCaption('Sokodan')

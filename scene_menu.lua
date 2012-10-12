@@ -96,14 +96,6 @@ function menu:draw()
     end
 end
 
-function menu:levels()
-    self.player = {x = 6, y = 3}
-    self.blocks[1].y = 4
-    self.font_zoom = 1
-    self.selection = 2
-    self.switching = false
-end
-
 function menu:keypressed(key)
     if key == ' ' then
         Gamestate.switch(main)
@@ -134,7 +126,7 @@ function menu:keypressed(key)
         end
 
         Timer.add(2, function()
-            if selection == 1 then self:levels() end
+            if selection == 1 then Gamestate.switch(choose_level) end
             if selection == 2 then Gamestate.switch(main) end
             if selection == 3 then love.event.push('quit') end
         end)
