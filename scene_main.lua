@@ -3,17 +3,34 @@ main = Gamestate.new()
 
 function main:init()
     camera = Camera()
+    local p = love.graphics.newParticleSystem(Media.star, 300)
+    p:setEmissionRate(100)
+    p:setSpeed(300, 500)
+--    p:setGravity(300)
+    p:setSizes(.5, 1.5)
+    p:setLifetime(2)
+    p:setParticleLife(2)
+    p:setDirection(0)
+    p:setSpread(50)
+    p:setSizeVariation(2)
+    p:setRadialAcceleration(1, 2)
+    p:stop()
+    self.particles = p
 end
 
 function main:enter(previous)
     rescale()
     self.hue = 0
+    self.is_winning = false
 end
 
 function main:update(dt)
     Timer.update(dt)
     Stars.update(dt)
     self.hue = self.hue + dt * 50
+    if self.is_winning then
+        self.particles:update(dt)
+    end
 end
 
 function draw_quad(t, pos, ...)
@@ -40,6 +57,18 @@ function main:draw()
     render()
     love.graphics.pop()
 
+    love.graphics.setColorMode('modulate')
+
+    if self.is_winning then
+        love.graphics.draw(self.particles, Media.screenx / 2, Media.screeny / 2)
+        love.graphics.setFont(Media.fonts.large)
+        love.graphics.setColor(60, 60, 60)
+        love.graphics.print("You did it!", Media.screenx / 2 - 225, Media.screeny / 2 - 45)
+        love.graphics.setColor(255, 150, 150)
+        love.graphics.print("You did it!", Media.screenx / 2 - 230, Media.screeny / 2 - 50)
+    end
+
+    love.graphics.setFont(Media.fonts.menu)
     love.graphics.setColorMode('modulate')
     love.graphics.setColor(60, 60, 60)
     love.graphics.print(Levels.levelno, 15, 15)
@@ -85,29 +114,37 @@ function rescale()
 end
 
 local function next_level()
-    Levels:next_level()
-    rescale()
+    main.is_winning = true
+    main.particles:start()
     Media:play_sound('goal')
-    Media:next_song()
+    Timer.do_for(3, function(dt)
+
+        end, function()
+        main.is_winning = false
+        main.particles:reset()
+        main.particles:stop()
+        Levels:next_level()
+        rescale()
+        Media:next_song()
+    end)
 end
 
 function main:keypressed(key)
-    if key == 'esc' then
+    if self.is_winning then return end
+
+    if key == 'escape' then
         Gamestate.switch(menu)
-    end
-    if key == ' ' then
+    elseif key == 'w' then
+        Gamestate.switch(win)
+    elseif key == ' ' then
         next_level()
-    end
-    if key == 'up' then
+    elseif key == 'up' then
         Levels:move(0, -1, next_level)
-    end
-    if key == 'down' then
+    elseif key == 'down' then
         Levels:move(0, 1, next_level)
-    end
-    if key == 'left' then
+    elseif key == 'left' then
         Levels:move(-1, 0, next_level)
-    end
-    if key == 'right' then
+    elseif key == 'right' then
         Levels:move(1, 0, next_level)
     end
 end

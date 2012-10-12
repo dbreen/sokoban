@@ -8,7 +8,7 @@ require 'scene_main'
 require 'scene_menu'
 require 'scene_win'
 
-enable_music = true
+enable_music = false
 
 function love.load()
     love.graphics.setCaption('Sokodan')

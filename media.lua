@@ -46,7 +46,8 @@ function Media:load()
     self.current_song = 1
 
     self.fonts = {
-        menu = love.graphics.newFont('media/fonts/floralies.ttf', 48)
+        menu = love.graphics.newFont('media/fonts/floralies.ttf', 48),
+        large = love.graphics.newFont('media/fonts/floralies.ttf', 96)
     }
 end
 
